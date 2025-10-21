@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Snake Game</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<div id="game-container">
+		<canvas id="gc" class="game-canvas" width="400" height="400"></canvas>
+	</div>
+<div id="videoPopup" style="
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 300px; 
+    padding: 20px; 
+    background-color: rgba(0, 0, 0, 0.9); 
+    border-radius: 10px;
+    display: none; /* Initial state is hidden */
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+">
+    <h2 style="color: white; font-size: 30px;"><b><i>Game Over!</i></b></h2>
+    <video id="deathVideo" src="ssstik.io_@ckir21_1761034120793.mp4" width="280" controls autoplay></video>
+    <button id="closePopupButton" style="margin-top: 15px; padding: 10px 20px; font-size: 16px;">
+        Subukan muli
+    </button>
+</div>
+
+	
+	<div class="keys">
+	  <a class="up arr" onclick="Snake.action('up')">
+	    <i class="chevron up"></i></a>
+	  <br />
+	  <a class="left arr" onclick="Snake.action('left')">
+	    <i class="chevron left"></i></a>
+	  <a class="down arr" onclick="Snake.action('down')">
+	    <i class="chevron down"></i></a>
+	  <a class="right arr" onclick="Snake.action('right')">
+	    <i class="chevron right"></i></a>
+	</div>
+	<script type="text/javascript" src="game.js"></script>
+	
+	
+	<!-- Background Music -->
+<audio id="bgMusic" src="linga guli guli.mp3" autoplay loop hidden></audio>
+
+<script>
+  // Optional fallback in case autoplay is blocked by browser
+  document.addEventListener('click', () => {
+    const music = document.getElementById('bgMusic');
+    if (music.paused) {
+      music.play();
+    }
+  });
+</script>
+
+	
+</body>
+</html>
